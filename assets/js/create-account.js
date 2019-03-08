@@ -1,7 +1,7 @@
 const URLPREFIX = "https://desolate-hollows-29433.herokuapp.com"
 
 $("#cancel").click(function(){
-	window.location.href = "../../index.html";
+	window.location.href = "../index.html";
 })
 
 $("#create").click(function(){
