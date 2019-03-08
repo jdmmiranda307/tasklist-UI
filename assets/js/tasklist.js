@@ -6,11 +6,11 @@ const URLPREFIX = "https://desolate-hollows-29433.herokuapp.com"
 $(document).ready(function(){
     $("#save-button").unbind().click(function(){
         if($("#title").data("idtask")){
-            url = CONSTPREFIX + "/tasks/" + $("#title").data("idtask") + "/"
+            url = URLPREFIX + "/tasks/" + $("#title").data("idtask") + "/"
             type = 'PUT'
         }
         else{
-            url = CONSTPREFIX + "/tasks/"
+            url = URLPREFIX + "/tasks/"
             type = 'POST'
         }
         data = {}
@@ -25,7 +25,6 @@ $(document).ready(function(){
                 location.reload()
             },
             error: function(response){
-                // toast message
                 toastr.options = {
                     "positionClass": "toast-bottom-center",
                     "showDuration": "700",
@@ -43,7 +42,7 @@ $(document).ready(function(){
     });
 
     $.ajax({
-        url:CONSTPREFIX + "/tasks/",
+        url:URLPREFIX + "/tasks/",
         type: 'GET',
         headers: {"Authorization": "JWT " + sessionStorage.getItem('validationToken')},
         success: function(response){
@@ -77,7 +76,7 @@ $(document).ready(function(){
     });
 });
 
-// This function recieves and object and creat a HTML card with the info of the object
+// This function recieves an object and creat a HTML card with the info of the object
 var cardBuilder = function(data){
     card = "<div class='card' data-idtask='"+data.id+"' data-idstatus='"+ data.status +"'>"+
                 "<div class='card-body'>"+
@@ -115,7 +114,7 @@ var deleteListener = function(){
         $card = $(this).parents(".card")
         id = $card.data("idtask")
         $.ajax({
-            url: CONSTPREFIX + "/tasks/"+id,
+            url: URLPREFIX + "/tasks/"+id,
             type: 'delete',
             headers: {"Authorization": "JWT " + sessionStorage.getItem('validationToken')},
             success: function(){
@@ -175,7 +174,7 @@ var changeStatusListener = function(){
         $card = $(this).parents(".card")
         id = $card.data("idtask")
         $.ajax({
-            url: CONSTPREFIX + "/tasks/"+id+"/update_status/",
+            url: URLPREFIX + "/tasks/"+id+"/update_status/",
             type: 'put',
             data:data,
             headers: {"Authorization": "JWT " + sessionStorage.getItem('validationToken')},
