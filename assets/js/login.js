@@ -1,4 +1,4 @@
-const URLPREFIX = "http://localhost:8000"
+const URLPREFIX = "https://desolate-hollows-29433.herokuapp.com"
 
 $("#login").click(function(){
 	data = {}

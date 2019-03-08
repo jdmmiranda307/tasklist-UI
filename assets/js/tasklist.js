@@ -1,7 +1,7 @@
 const TODO = 1
 const DOING = 2
 const DONE = 3
-const URLPREFIX = "http://localhost:8000"
+const URLPREFIX = "https://desolate-hollows-29433.herokuapp.com"
 
 $(document).ready(function(){
     $("#save-button").unbind().click(function(){
