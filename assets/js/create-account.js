@@ -14,7 +14,7 @@ $("#create").click(function(){
 		type: "POST",
 		dataType: "json",
 		success: function(response){
-			window.location.replace("../../index.html");
+			window.location.replace("../index.html");
 		},
 		error: function(response){
 			toastr.options = {

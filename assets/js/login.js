@@ -11,7 +11,7 @@ $("#login").click(function(){
 		dataType: "json",
 		success: function(response){
 			sessionStorage.setItem("validationToken", response.token);
-			window.location.replace("UI/html/tasklist.html");
+			window.location.replace("html/tasklist.html");
 		},
 		error: function(response){
 			toastr.options = {
